@@ -1,0 +1,13 @@
+技术栈
+UI：antd-mobile
+框架：React/Redux/Redux-thunk/Saga
+CSS预编译器：Sass
+Javascript预编译器：Babel
+测试：
+目录结构：
+代码仓库：github
+
+功能点/实现方式
+单点登录/JSON Web Token（JWT）
+数据交互：axios
+本地持久化：localStorage/sessionStorage
