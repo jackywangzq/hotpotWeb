@@ -1,46 +1,40 @@
 .App {
+  @media screen and(max-width:1280px){
+    width: 80%;
+  }
+  @media screen and(max-width:767px){
+    width: 100%;
+  }
   display: flex;
   flex-direction: column;
   align-items: center; 
-  .App-Button{
+  height: 100%;
+  box-sizing: border-box;
+  margin: auto;
+  
+  .App-header {
     display: flex;
-    flex-direction: row;
-    justify-content: center;
     align-items: center;
-    width: 100%;
-    height: 88px;
-    font-size: 0.3rem;
+    width:100%;
+    height: 20%;
+    box-sizing: border-box;
+    border: 1px solid red;
   }
 
-  .App-header {
-    background-color: #282c34;
-    width: 100%;
-    min-height: 100vh;
+  .App-main{
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
-    .App-logo {
-      height: 40vmin;
-    };
-    .App-link {
-      color: #09d3ac;
-    };
-    #buttons{
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      #button{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        padding-left: 0.1rem;
-        padding-right: 0.1rem;
-        font-size:0.5rem;
-      }
-    }
+    width:100%;
+    height: 70%;
+    box-sizing: border-box;
+    border: 1px solid red;
+  }
+
+  .App-footer{
+    display: flex;
+    width:100%;
+    height: 10%;
+    box-sizing: border-box;
+    border: 1px solid red;
   }
 }
 
