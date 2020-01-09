@@ -1,6 +1,5 @@
 import React from 'react'
 import './card.scss';
-import {Button} from 'antd-mobile';
 
 export default class card extends React.Component {
     constructor(props) {

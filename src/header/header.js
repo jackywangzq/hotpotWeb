@@ -13,7 +13,7 @@ export default class header extends React.Component {
     render(){
         return (<div className="wrapper_header">
                     <div className="content">
-                            <span></span>
+                            {/* <span></span> */}
                             美味小厨
                     </div>
                 </div>
