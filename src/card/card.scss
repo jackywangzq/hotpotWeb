@@ -153,7 +153,7 @@
 
         .alarm {
              &:hover .alarm{
-                 display: block
+                display: block
             }
             background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSIjZmZmZmZmIj4KICA8cGF0aCBkPSJNOSAxMmMyLjIxIDAgNC0xLjc5IDQtNHMtMS43OS00LTQtNC00IDEuNzktNCA0IDEuNzkgNCA0IDR6bTAtNmMxLjEgMCAyIC45IDIgMnMtLjkgMi0yIDItMi0uOS0yLTIgLjktMiAyLTJ6bTAgN2MtMi42NyAwLTggMS4zNC04IDR2M2gxNnYtM2MwLTIuNjYtNS4zMy00LTgtNHptNiA1SDN2LS45OUMzLjIgMTYuMjkgNi4zIDE1IDkgMTVzNS44IDEuMjkgNiAydjF6bTMtNHYtM2gtM1Y5aDNWNmgydjNoM3YyaC0zdjNoLTJ6Ii8+Cjwvc3ZnPgo=);
             .alarm{
@@ -175,10 +175,10 @@
                 .star{
                     height:80%;
                     &:after {
-                    content: "";
-                    display: inline-block;
-                    vertical-align: middle;
-                    height: 100%;
+                        content: "";
+                        display: inline-block;
+                        vertical-align: middle;
+                        height: 100%;
                     }
                 }
                 .submit{
@@ -199,14 +199,12 @@
                     background-color:#e94f4f;
                     font-size: 24px;
                     text-align:center
-                    }
-                    
-            
+                }
                 .icon:before {
-                padding: 8px;
-                content: '\f005';
-                font-family: FontAwesome;
-                vertical-align: middle;
+                    padding: 8px;
+                    content: '\f005';
+                    font-family: FontAwesome;
+                    vertical-align: middle;
                 }
             }
         }

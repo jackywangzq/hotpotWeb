@@ -1,11 +1,10 @@
+import Card from './card/card.js';
+import Header from './header/header.js'
+import Footer from './footer/footer.js'
+import Welcome from './demo/demo.js';
+import './App.scss';
 import actionCreator from './reduce/actionCreator'
 import { connect } from 'react-redux';
-import fetchJsonp from 'fetch-jsonp'
-import './App.scss';
-import Card from './card/card.js';
-import Triangle from './triangle/triangle.js';
-import Welcome from './demo/demo.js';
-import {Button} from 'antd-mobile';
 import React from 'react';
 // import logo, { ReactComponent } from './logo.svg';
 
@@ -52,24 +51,11 @@ class App extends React.Component {
     console.log(document.documentElement.clientWidth)
     return (
       <div className='App'>
-        <Button type='primary' className='App-Button'>{document.documentElement.clientWidth}</Button>
+        <Header></Header>
         <header className="App-header">
-          <Card></Card> 
-          <Triangle></Triangle>
-          {/* <form>
-            <input type="text"  onChange={this.changeUsername.bind(this)}/> 
-          </form> */}
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer" >
-                 Learn React
-        </a>
-      </header>
+            <Card></Card> 
+        </header>
+        <Footer></Footer>
     </div>
     );
   }

@@ -1,46 +1,19 @@
 .App {
   display: flex;
+  width:100%;
+  height: 100%;
   flex-direction: column;
   align-items: center; 
-  .App-Button{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 88px;
-    font-size: 0.3rem;
-  }
 
   .App-header {
     background-color: #282c34;
     width: 100%;
-    min-height: 100vh;
+    height: 1348px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     font-size: calc(10px + 2vmin);
     color: white;
-    .App-logo {
-      height: 40vmin;
-    };
-    .App-link {
-      color: #09d3ac;
-    };
-    #buttons{
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      #button{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        padding-left: 0.1rem;
-        padding-right: 0.1rem;
-        font-size:0.5rem;
-      }
-    }
   }
 }
-
