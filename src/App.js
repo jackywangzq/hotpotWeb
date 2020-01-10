@@ -52,9 +52,9 @@ class App extends React.Component {
     return (
       <div className='App'>
         <Header></Header>
-        <header className="App-header">
+        <main className="main">
             <Card></Card> 
-        </header>
+        </main>
         <Footer></Footer>
     </div>
     );
