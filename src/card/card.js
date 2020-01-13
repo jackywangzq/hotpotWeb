@@ -154,7 +154,7 @@ export default class card extends React.Component {
                     </div>
                 </div>
                 <div className="toolbar" >
-                    <span className="skin" >
+                    <span className="skin" style={{display:"none"}}>
                         <div className="color" onClick={this.skin}>
                             <div>
                                 <span style={{background: '#2d555e', textAlign: 'center'}} data-index="0" >
@@ -215,11 +215,11 @@ export default class card extends React.Component {
                             
                         </div>
                     </span>
-                    <span className="more">
+                    {/* <span className="more">
                         <div className="more_">
                            
                         </div>
-                    </span>
+                    </span> */}
                 </div>
             </div>
             
