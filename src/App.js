@@ -51,7 +51,7 @@ class App extends React.Component {
       <div className='App'>
         <Header></Header>
         <main className="main">
-          <div style={{width:"70%"}}>
+          <div style={{width:"70%", textAlign:"center"}}>
             <div style={{width:"50%", display:"inline-block"}}>
             <Card id="1"></Card> 
             </div>
@@ -59,7 +59,7 @@ class App extends React.Component {
             <Card id="2"></Card> 
             </div>
           </div>
-          <div style={{width:"70%"}}>
+          <div style={{width:"70%", textAlign:"center"}}>
             <div style={{width:"50%", display:"inline-block"}}>
             <Card id="3"></Card> 
             </div>
@@ -67,7 +67,7 @@ class App extends React.Component {
             <Card id="4"></Card> 
             </div>
           </div>
-          <div style={{width:"70%"}}>
+          <div style={{width:"70%", textAlign:"center"}}>
             <div style={{width:"50%", display:"inline-block"}}>
             <Card id="5"></Card> 
             </div>
@@ -75,7 +75,7 @@ class App extends React.Component {
             <Card id="6"></Card> 
             </div>
           </div>
-          <div style={{width:"70%"}}>
+          <div style={{width:"70%", textAlign:"center"}}>
             <div style={{width:"50%", display:"inline-block"}}>
             <Card id="7"></Card> 
             </div>
