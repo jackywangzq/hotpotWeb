@@ -6,7 +6,7 @@
         -webkit-transition-timing-function: ease-in;
         -webkit-transition-duration: 1s;
     }
-    display: block;
+    display: inline-block;
     position: relative;
     box-sizing: border-box;
     width: 100%;
@@ -52,7 +52,7 @@
             display: -webkit-box;         /* 将对象作为弹性伸缩盒子模型显示 */
             box-sizing: border-box;
             padding-top: 12px;
-            height: 60%;
+            height: 55%;
             overflow: hidden;
             font-size: 24px;
             font-weight: 400;
@@ -98,11 +98,19 @@
         width: 50%;
         height: 12%;
         margin: 0 25% 0 25%;
+        font-size: 32px;
+        &:after{
+            content: "";
+            display: inline-block;
+            vertical-align: middle;
+            height: 100%;
+        }
         &>span {
             width:33%;
             height:100%;
             display: inline-block;
             text-align: center;
+            vertical-align: middle;
             background-repeat: no-repeat;
             background-position: center;
             border-radius: 50%;
@@ -128,7 +136,7 @@
                 background-color:#79887D;
                 div{
                     height:50%;
-                    &:before {
+                    &:after {
                         content: "";
                         display: inline-block;
                         vertical-align: middle;
@@ -144,7 +152,6 @@
                         margin: 0 20px 0 20px;
                         vertical-align: middle;
                         border-radius: 50%;
-                        background-color: red;
                         font-size:32px;
                     }
                 }
@@ -163,7 +170,7 @@
                     vertical-align: middle;
                     height: 100%;
                 }
-                display: none;;
+                display: none;
                 position: absolute;
                 top: -150px;
                 left: 0;

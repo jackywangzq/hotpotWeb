@@ -1,7 +1,6 @@
 import Card from './card/card.js';
 import Header from './header/header.js'
 import Footer from './footer/footer.js'
-import Welcome from './demo/demo.js';
 import './App.scss';
 import actionCreator from './reduce/actionCreator'
 import { connect } from 'react-redux';
@@ -12,7 +11,6 @@ let state = {
   num : 1,
 }
 
-console.log(Welcome)
 class App extends React.Component {
   constructor(props){
     super(props);
@@ -53,7 +51,38 @@ class App extends React.Component {
       <div className='App'>
         <Header></Header>
         <main className="main">
-            <Card></Card> 
+          <div style={{width:"70%"}}>
+            <div style={{width:"50%", display:"inline-block"}}>
+            <Card id="1"></Card> 
+            </div>
+            <div style={{width:"50%", display:"inline-block"}}>
+            <Card id="2"></Card> 
+            </div>
+          </div>
+          <div style={{width:"70%"}}>
+            <div style={{width:"50%", display:"inline-block"}}>
+            <Card id="3"></Card> 
+            </div>
+            <div style={{width:"50%", display:"inline-block"}}>
+            <Card id="4"></Card> 
+            </div>
+          </div>
+          <div style={{width:"70%"}}>
+            <div style={{width:"50%", display:"inline-block"}}>
+            <Card id="5"></Card> 
+            </div>
+            <div style={{width:"50%", display:"inline-block"}}>
+            <Card id="6"></Card> 
+            </div>
+          </div>
+          <div style={{width:"70%"}}>
+            <div style={{width:"50%", display:"inline-block"}}>
+            <Card id="7"></Card> 
+            </div>
+            <div style={{width:"50%", display:"inline-block"}}>
+            <Card id="8"></Card> 
+            </div>
+          </div>
         </main>
         <Footer></Footer>
     </div>

@@ -18,6 +18,7 @@ export default class card extends React.Component {
         this.scoreValue = this.scoreValue.bind(this);
         this.scoreValueOver =this.scoreValueOver.bind(this);
         this.scoreValueOut =this.scoreValueOut.bind(this);
+        this.id = this.props.id;
     }
 
     scoreValueOut = function(e){
@@ -72,16 +73,19 @@ export default class card extends React.Component {
     }
     
     skin = function(e){
-        console.log(this.state.starNum[0])
-        let polyline_length = document.getElementsByTagName("polyline").length;
+        let  polyline_length = document.getElementsByTagName("polyline").length;
+        polyline_length = 8;
+        console.log(polyline_length)
         let j=0
+        let num = 0
         for (j; j<polyline_length; j++){
             if(j==e.target.getAttribute("data-index")){
-                document.getElementsByTagName("polyline")[j].setAttribute("visibility","visible")
-                document.getElementsByClassName("wrapper")[0].style.backgroundColor= "#2d555e"
+                num = j+(parseInt(this.id)-1)*8
+                document.getElementsByTagName("polyline")[num].setAttribute("visibility","visible")
             }
             else{
-                document.getElementsByTagName("polyline")[j].setAttribute("visibility","hidden")
+                num = j+(parseInt(this.id)-1)*8
+                document.getElementsByTagName("polyline")[num].setAttribute("visibility","hidden")
             }
         }
         if(e.target.getAttribute("data-index")){
@@ -95,11 +99,12 @@ export default class card extends React.Component {
                 hex += ("0" + Number(color[i]).toString(16)).slice(-2);
             }
             console.log(hex)
-            document.getElementsByClassName("wrapper")[0].style.backgroundColor = hex
+            // console.log(document.getElementById(this.id))
+            document.getElementById(this.id).style.backgroundColor = hex
         }
     };  
     render(){
-        return (<div className="wrapper" >
+        return (<div className="wrapper" id={this.id}>
                 <div className="div1"> <img className="icon" src="https://p0.meituan.net/deal/3df7a54d32c3c852dad3e62ecb8442bf1766882.jpg%40160w_100h_1e_1c_1l%7Cwatermark%3D1%26%26r%3D1%26p%3D9%26x%3D2%26y%3D2%26relative%3D1%26o%3D20"/>
                 </div>
                 <div className="div2"> 
