@@ -1,4 +1,3 @@
-import Router from './router/router'
 import {Provider} from 'react-redux'
 import reduce from './reduce/reduce.js'
 import { createStore } from 'redux';
@@ -12,7 +11,7 @@ import * as serviceWorker from './serviceWorker';
 const store = createStore(reduce)
 ReactDOM.render(
     <Provider store={store}>
-        <Router/>
+        <App/>
     </Provider>
     , document.getElementById('root'));
 
