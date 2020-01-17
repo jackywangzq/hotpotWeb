@@ -1,5 +1,5 @@
 import {Input} from 'antd';
-import axios from 'axios'
+import axios from '../axios/axios'
 import Error from './error'
 import Success from './success'
 import React, { Component } from 'react'
@@ -15,25 +15,34 @@ export default class login extends Component {
 
     login(){
         let token = ''
-        axios.get("http://106.52.159.25:80/login")
-            .then((response)=> {
-                                token =response.data
-                                console.log(response) 
-                                window.localStorage.setItem("token",token);
-                                console.log(window.localStorage.getItem('token'))
-                                })
-            .catch(function (error) {
-                console.log(error);
-            })
-        setTimeout(() => {
-            if(!token){
-                 this.props.history.push({pathname:'/main'})
-            }  
-            else{
-                this.props.history.push({pathname:'/login'})
-            }
+        let data = {
+            username:"wangziqi",
+            password:"0000000"
+        }
+        axios('/login','post',5000,data).then(function(response){
+            console.log(response)
+            // if()
+            window.localStorage.setItem("token",response.data);
+            this.props.history.push({pathname:'/main'})
+        })
+
+        // axios.get("http://106.52.159.25:80/login")
+        //     .then((response)=> {
+        //                         token =response.data
+        //                         console.log(response) 
+                               
+        //                         console.log(window.localStorage.getItem('txoken'))
+        //                         })
+        //     .catch(function (error) {
+        //         console.log(error);
+        //     })
+        // setTimeout(() => {
+        //     if(!token){
+        //     }  
+        //     else{
+        //     }
          
-        }, 1000);
+        // }, 1000);
         if(!this.isLogin){
             console.log(1)
             this.props.history.push({pathname:'/login',state : { id : '111' }})

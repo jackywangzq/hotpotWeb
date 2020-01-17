@@ -1,4 +1,4 @@
-import axios from 'axios'
+import axios from './axios/axios'
 import Card from './card/card.js';
 import Header from './header/header.js'
 import Footer from './footer/footer.js'
@@ -20,25 +20,15 @@ class App extends React.Component {
     this.name = "wangziqi"
     this.say = this.say.bind(this)
     this.changeUsername = this.changeUsername.bind(this)
-
   }
   componentDidMount(){
     if(window.localStorage.getItem("token")){
       console.log("login")
-      const instance = axios.create({
-        baseURL: 'http://106.52.159.25:80',
-        timeout:5000, 
+      axios('/login','get',5000).then(function(response){
+        console.log(response)
+        console.log(1)
       })
-      instance.get('/login',{'Access-Control-Allow-Origin':'*','headers':{'Authorization':'123', 'token':'1234'}}).then((response)=> {
-          console.log(1)
-          console.log(response) 
-          })
-          .catch(function (error) {
-            console.log(error);
-          })
-      // axios({method:'post', url:'http://106.52.159.25:80/login', })
-        
-      }
+    }
     else{
       this.props.history.push({pathname:'/login'})
     }
