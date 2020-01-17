@@ -1,3 +1,4 @@
+import axios from 'axios'
 import Card from './card/card.js';
 import Header from './header/header.js'
 import Footer from './footer/footer.js'
@@ -21,36 +22,56 @@ class App extends React.Component {
     this.changeUsername = this.changeUsername.bind(this)
 
   }
-
-  changeUsername(e){
-    console.log(e);
-    // console.log(e.target.value);
-    this.props.dispatch(actionCreator(e.target.value))
-  }
-  say(){
-    //http请求
-    // let api="http://www.phonegap100.com/appapi.php?a=getPortalList&catid=20&callback=?";
-    // fetchJsonp(api)
-    // .then(function(response) {
-    //     return response.json()
-    // }).then((json)=> {
-    //     console.log(json.result);       
-    // }).catch(function(ex) {
-    //     console.log('parsing failed', ex)
-    // })  
-    let person = {name:"wangziqi",
-                  age: 33,
-                others:[1,2,3,4,5]
+  componentDidMount(){
+    if(window.localStorage.getItem("token")){
+      console.log("login")
+      const instance = axios.create({
+        baseURL: 'http://106.52.159.25:80',
+        timeout:5000, 
+      })
+      instance.get('/login',{'Access-Control-Allow-Origin':'*','headers':{'Authorization':'123', 'token':'1234'}}).then((response)=> {
+          console.log(1)
+          console.log(response) 
+          })
+          .catch(function (error) {
+            console.log(error);
+          })
+      // axios({method:'post', url:'http://106.52.159.25:80/login', })
+        
+      }
+    else{
+      this.props.history.push({pathname:'/login'})
     }
-    let {name,age} = person;
-    console.log(name,age)
   }
-  render(){
-    console.log(document.documentElement.clientWidth)
-    return (
-      <div className='App'>
-        <Header></Header>
-        <main className="main">
+changeUsername(e){
+  console.log(e);
+  // console.log(e.target.value);
+  this.props.dispatch(actionCreator(e.target.value))
+}
+say(){
+  //http请求
+  // let api="http://www.phonegap100.com/appapi.php?a=getPortalList&catid=20&callback=?";
+  // fetchJsonp(api)
+  // .then(function(response) {
+  //     return response.json()
+  // }).then((json)=> {
+  //     console.log(json.result);       
+  // }).catch(function(ex) {
+  //     console.log('parsing failed', ex)
+  // })  
+  let person = {name:"wangziqi",
+                age: 33,
+              others:[1,2,3,4,5]
+  }
+  let {name,age} = person;
+  console.log(name,age)
+}
+render(){
+  console.log(document.documentElement.clientWidth)
+  return (
+    <div className='App'>
+      <Header></Header>
+      <main className="main">
           <div style={{width:"70%", textAlign:"center"}}>
             <div style={{width:"50%", display:"inline-block"}}>
             <Card id="1"></Card> 

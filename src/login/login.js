@@ -1,3 +1,5 @@
+import {Input} from 'antd';
+import axios from 'axios'
 import Error from './error'
 import Success from './success'
 import React, { Component } from 'react'
@@ -12,6 +14,26 @@ export default class login extends Component {
     }
 
     login(){
+        let token = ''
+        axios.get("http://106.52.159.25:80/login")
+            .then((response)=> {
+                                token =response.data
+                                console.log(response) 
+                                window.localStorage.setItem("token",token);
+                                console.log(window.localStorage.getItem('token'))
+                                })
+            .catch(function (error) {
+                console.log(error);
+            })
+        setTimeout(() => {
+            if(!token){
+                 this.props.history.push({pathname:'/main'})
+            }  
+            else{
+                this.props.history.push({pathname:'/login'})
+            }
+         
+        }, 1000);
         if(!this.isLogin){
             console.log(1)
             this.props.history.push({pathname:'/login',state : { id : '111' }})
@@ -21,22 +43,24 @@ export default class login extends Component {
         }
         
     }
+
+    logout(){
+        window.localStorage.removeItem("token");
+    }
+    
     render() {
         return (
-            <div>
-                <Link to="/login/success">1</Link>
-                <Link to="/login/error">2</Link>
-                <a onClick={this.login}>main</a>
-                 123
-                  {this.props.children}
-                  <div className="child-router">
-                    <Route path={`${this.props.match.path}/error`} component={Error} />
-                    <Route path={`${this.props.match.path}/Success`} component={Success} />
+            <div className="wrapper_login">
+                <div>
+                    <Input.Password placeholder="输入用户名" />
+                    <Input.Password placeholder="输入密码" />
+                    <a onClick={this.login}>登陆</a>
+                    <a onClick={this.logout}>注销</a>
+                    <div className="child-router">
+                        <Route path={`${this.props.match.path}/error`} component={Error} />
+                        <Route path={`${this.props.match.path}/Success`} component={Success} />
+                    </div>
                 </div>
-
-<div>
-                    
-                 </div>
             </div>
         
         )

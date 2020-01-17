@@ -3,7 +3,7 @@ import Login from '../login/login'
 import Error from '../login/error'
 import Success from '../login/success'
 import React, { Component } from 'react'
-import { Route, Switch, withRouter, BrowserRouter, HashRouter } from 'react-router-dom'
+import { Route, Switch, withRouter, BrowserRouter, HashRouter, } from 'react-router-dom'
 class Router extends Component {
   constructor(props) {
     super(props)
@@ -14,9 +14,9 @@ class Router extends Component {
   render() {
     return (
       <BrowserRouter>
-          <Route path="/login" component={Login
-              }/>
-          <Route path="/main" component={App} />
+            <Route path="/" component={App} exact />
+            <Route path="/login" component={Login}/>
+            <Route path="/index" component={App} />
       </BrowserRouter>)
   }
 }

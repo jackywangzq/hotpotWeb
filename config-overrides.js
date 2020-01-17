@@ -9,7 +9,9 @@ const fileLoaderMatcher = function (rule) {
 module.exports = function override(config, env) {
     // do stuff with the webpack config...
     config = injectBabelPlugin(['import', {
-        libraryName: 'antd-mobile',
+         libraryName: 'antd',
+         libraryDirectory: 'es',
+        // libraryName: 'antd-mobile',
         style: 'css',
         // style: true, // use less for customized theme
     }], config);
