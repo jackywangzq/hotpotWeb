@@ -20,9 +20,10 @@ export default class login extends Component {
             password:"0000000"
         }
         axios('/login','post',5000,data).then(function(response){
-            console.log(response)
+            console.log(response.data.token)
+            let token = response.data.token 
             // if()
-            window.localStorage.setItem("token",response.data);
+            window.localStorage.setItem("token",token);
             this.props.history.push({pathname:'/main'})
         })
 
