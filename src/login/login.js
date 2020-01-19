@@ -26,7 +26,6 @@ export default class login extends Component {
                 window.localStorage.setItem("token",response.data.token);
                 this_.props.history.push({pathname:'/index'})
             }
-           
         })
 
         // axios.get("http://106.52.159.25:80/login")

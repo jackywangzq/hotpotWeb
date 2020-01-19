@@ -14,7 +14,7 @@ class Router extends Component {
   render() {
     return (
       <BrowserRouter>
-            <Route path="/" component={App} exact />
+            {/* <Route path="/" component={App} exact /> */}
             <Route path="/login" component={Login}/>
             <Route path="/index" component={App} />
       </BrowserRouter>)

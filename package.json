@@ -10,12 +10,12 @@
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "enzyme-adapter-react-15": "^1.4.1",
     "eslint-config-airbnb": "^18.0.1",
-    "node-sass": "^4.13.0",
+    "node-sass": "^4.13.1",
     "qnui": "^0.6.1",
     "react": "^16.11.0",
     "react-app-rewired": "^2.0.2-next.0",
     "react-dom": "^16.11.0",
-    "react-scripts": "3.2.0"
+    "react-scripts": "^3.3.0"
   },
   "scripts": {
     "start": "react-app-rewired start",
