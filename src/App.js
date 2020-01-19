@@ -22,11 +22,14 @@ class App extends React.Component {
     this.changeUsername = this.changeUsername.bind(this)
   }
   componentDidMount(){
+    let this_ = this
     if(window.localStorage.getItem("token")){
-      console.log("login")
       axios('/login','get',5000).then(function(response){
-        console.log(response)
-        console.log(1)
+        console.log(response.data.status)
+        if(response.data.status=="error"){
+          window.localStorage.removeItem("token");
+          this_.props.history.push({pathname:'/login'})
+        }
       })
     }
     else{

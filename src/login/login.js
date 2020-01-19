@@ -15,15 +15,18 @@ export default class login extends Component {
 
     login(){
         let token = ''
+        let this_ = this
         let data = {
             username:"wangziqi",
             password:"0000000"
         }
         axios('/login','post',5000,data).then(function(response){
             console.log(response)
-            // if()
-            window.localStorage.setItem("token",response.data);
-            this.props.history.push({pathname:'/main'})
+            if(response.data.token){
+                window.localStorage.setItem("token",response.data.token);
+                this_.props.history.push({pathname:'/index'})
+            }
+           
         })
 
         // axios.get("http://106.52.159.25:80/login")
